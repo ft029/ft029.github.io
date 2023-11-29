@@ -9,7 +9,7 @@
     </p>
     <p>
       You can see the source code (developer tools -> sources -> click one of the penpa-edit js files) to see how I turned the data into shaded cells on penpa.
-      It's a straightforward for loop. I also count the frames, so that the congratulations display can appear at the end :D
+      It's a straightforward for loop. I also count the frames, so that the congratulations display can appear at the end :D I borrowed the congratulations code from fluff.
     </p>
     <p>
       I spent several days trying to figure out audio. Originally I tried to use a Bad Apple mp3 file from AlexandreSenpai's github, but I don't think
@@ -17,7 +17,8 @@
       this part of my programming experience. The audio had to be compressed a ton to even
       fit the 2 MB limit. Furthermore javascript's audio would only play 5 seconds of the song before stopping. Eventually I asked fluff, who told me
       using third party resources is possible (e.g. in his penpa place puzzle). I found <a href = "https://simulationtouhou.weebly.com/uploads/1/6/5/2/16525562/bad_apple.mp3">
-        a different site</a> whose Bad Apple mp3 I was able to access.
+        a different site</a> whose Bad Apple mp3 I was able to access. Also, websites aren't allowed to autoplay audio or video without the user
+      first interacting with the site, which is why one has to first click "Start".
     </p>
     <p>
       Finally it took me a while to get the music and video to sync up. As the video is 30 frames per second, ideally a new frame is drawn every 33.333... milliseconds.
