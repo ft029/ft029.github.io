@@ -1,0 +1,28 @@
+<html>
+  <div>
+    <h3>Bad Apple in Penpa+ Explanation</h3>
+    <p>
+    To extract the frames of the video, I used <a href = "https://github.com/AlexandreSenpai/Bad-Apple/tree/main">AlexandreSenpai's python code</a>
+    which I found online. I modified it to output frames of size 30 x 40. However this data was wayyyyy too big! It turns out that URL's
+      cannot exceed a size of 2 MB, so some optimizations had to be made. I ended up encoding the frames into a list of indices (which pixels change each frame),
+      which was more efficient. I'm sure there's much more efficient ways to compress a video.
+    </p>
+    <p>
+      You can see the source code (developer tools -> sources -> click one of the penpa-edit js files) to see how I turned the data into shaded cells on penpa.
+      It's a straightforward for loop. I also count the frames, so that the congratulations display can appear at the end :D
+    </p>
+    <p>
+      I spent several days trying to figure out audio. Originally I tried to use a Bad Apple mp3 file from AlexandreSenpai's github, but I don't think
+      my code had the permission to do so. So I tried encoding the mp3 as a string. I'd like to thank knaoinr for giving me moral support through
+      this part of my programming experience. The audio had to be compressed a ton to even
+      fit the 2 MB limit. Furthermore javascript's audio would only play 5 seconds of the song before stopping. Eventually I asked fluff, who told me
+      using third party resources is possible (e.g. in his penpa place puzzle). I found <a href = "https://simulationtouhou.weebly.com/uploads/1/6/5/2/16525562/bad_apple.mp3">
+        a different site</a> whose Bad Apple mp3 I was able to access.
+    </p>
+    <p>
+      Finally it took me a while to get the music and video to sync up. As the video is 30 frames per second, ideally a new frame is drawn every 33.333... milliseconds.
+      But javascript's setInterval function makes the delay an integer, so instead a new frame is drawn every 33 milliseconds.
+      As a result I had to speed up the audio by a factor of 100/99 ;)
+    </p>
+  </div>
+</html>
